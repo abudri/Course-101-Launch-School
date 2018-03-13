@@ -45,18 +45,19 @@ loop do # main execution loop
     # prompt("Choose one: Rock, Paper, Scissors")
     # we use the .join on VALID_CHOICES to give a string separated by commas
     # that way if we need to add more values, can just add to VALID_CHOICES
-    choice = gets.chomp
+    choice = gets.chomp.downcase
 
     if VALID_INPUTS.include?(choice)
-      if choice == 'r'
+      case choice
+      when 'r'
         choice = 'rock'
-      elsif choice == 'p'
+      when 'p'
         choice = 'paper'
-      elsif choice == 's'
+      when 's'
         choice = 'scissors'
-      elsif choice == 'sp'
+      when 'sp'
         choice = 'spock'
-      elsif choice == 'l'
+      when 'l'
         choice = 'lizard'
       end
       break
@@ -66,23 +67,11 @@ loop do # main execution loop
   end
 
   computer_choice = VALID_CHOICES.sample
-  # use .sample to get random element from an array, held in
-  # constant VALID_CHOICES
   puts("You chose #{choice}, and computer chose #{computer_choice}")
-
-  result = display_result(choice, computer_choice) # method at top of program
-  prompt(result)
+  display_result(choice, computer_choice) # method at top of program
 
   player_wins = ''
   computer_wins = ''
-
-  if result == "You won!"
-    player_wins += 1
-    puts "Players wins: #{player_wins}"
-  elsif result == "Computer won!"
-    computer_wins += 1
-    puts "Players wins: #{player_wins}"
-  end
 
   if player_wins == 5
     puts "You are the final winner by reaching 5 wins first, congrats!"
@@ -92,8 +81,10 @@ loop do # main execution loop
     break
   end
 
-  prompt("Do you want to play again?")
-  answer = gets.chomp
-  break unless answer.downcase.start_with?('y')
+  break if player_wins == 5 || computer_wins == 5
+  
+  prompt("Do you want to play again? Enter 'y' to play, or any other key to Exit")
+  answer = gets.chomp.downcase
+  break unless answer == 'y'
 end
 
