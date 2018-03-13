@@ -1,6 +1,6 @@
 
-VALID_CHOICES = ['rock', 'paper', 'scissors', 'spock', 'lizard']
-VALID_INPUTS = ['r', 'p', 's', 'sp', 'l']
+VALID_CHOICES = %w(rock paper scissors spock lizard)
+VALID_INPUTS = %w(r p s sp l)
 # VALID_INPUTS so user can just type a letter or two for input
 
 def prompt(message)
@@ -26,12 +26,12 @@ def display_result(player, computer)
   # now calculate for who wins
   if win?(player, computer) # pass in player(you) as first player
     # and this executes if you won
-    prompt("You won!")
+    prompt('You won!')
   elsif win?(computer, player) # pass in computer as first player
     # and this executes if computer won
-    prompt("Computer won!")
+    prompt('Computer won!')
   else
-    prompt("Its a tie!")
+    prompt('Its a tie!')
   end
 end
 
@@ -74,17 +74,16 @@ loop do # main execution loop
   computer_wins = ''
 
   if player_wins == 5
-    puts "You are the final winner by reaching 5 wins first, congrats!"
+    puts 'You are the final winner by reaching 5 wins first, congrats!'
     break
   elsif computer_wins == 5
-    puts "The computer is the final winner by reaching 5 wins first!"
+    puts 'The computer is the final winner by reaching 5 wins first!'
     break
   end
 
   break if player_wins == 5 || computer_wins == 5
-  
-  prompt("Do you want to play again? Enter 'y' to play, or any other key to Exit")
+
+  prompt("Play again? Enter 'y' to play, or any other key to Exit")
   answer = gets.chomp.downcase
   break unless answer == 'y'
 end
-
