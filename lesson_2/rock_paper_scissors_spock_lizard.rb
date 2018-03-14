@@ -34,19 +34,13 @@ def display_result(player, computer)
   end
 end
 
-def clear_screen
-  system('clear') || system('cls')
-end
-
 # ----------------------
 
+player_wins = 0
+computer_wins = 0
 
 loop do # main execution loop. test
-  choice = '' # so we can use it outside the do/end block below
-  
-  player_wins = 0
-  computer_wins = 0
-
+  choice = '' # so we can use it outside the loop do/end block below
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')}")
     prompt("Type the FIRST letter of your choice. For Spock, type 'sp'")
@@ -84,11 +78,11 @@ loop do # main execution loop. test
     computer_wins += 1
   end
 
-  if player_wins == 5 
-    puts "You won the match with 5 wins!"
+  if player_wins == 5
+    puts 'You won the match with 5 wins!'
     break
   elsif computer_wins == 5
-    puts "Computer wins the match with 5 wins!"
+    puts 'Computer wins the match with 5 wins!'
     break
   end
 
