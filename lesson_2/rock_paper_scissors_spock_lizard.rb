@@ -41,7 +41,7 @@ end
 # ----------------------
 
 
-loop do # main execution loop
+loop do # main execution loop. test
   choice = '' # so we can use it outside the do/end block below
   
   player_wins = 0
