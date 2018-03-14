@@ -1,7 +1,6 @@
 
 VALID_CHOICES = %w(rock paper scissors spock lizard)
-VALID_INPUTS = %w(r p s sp l)
-# VALID_INPUTS so user can just type a letter or two for input
+VALID_INPUTS = %w(r p s sp l) # so user can type a letter or two for input
 
 def prompt(message)
   puts("=> #{message}")
@@ -35,10 +34,19 @@ def display_result(player, computer)
   end
 end
 
+def clear_screen
+  system('clear') || system('cls')
+end
+
 # ----------------------
+
 
 loop do # main execution loop
   choice = '' # so we can use it outside the do/end block below
+  
+  player_wins = 0
+  computer_wins = 0
+
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')}")
     prompt("Type the FIRST letter of your choice. For Spock, type 'sp'")
@@ -70,18 +78,19 @@ loop do # main execution loop
   puts("You chose #{choice}, and computer chose #{computer_choice}")
   display_result(choice, computer_choice) # method at top of program
 
-  player_wins = ''
-  computer_wins = ''
-
-  if player_wins == 5
-    puts 'You are the final winner by reaching 5 wins first, congrats!'
-    break
-  elsif computer_wins == 5
-    puts 'The computer is the final winner by reaching 5 wins first!'
-    break
+  if win?(choice, computer_choice)
+    player_wins += 1
+  elsif win?(computer_choice, choice)
+    computer_wins += 1
   end
 
-  break if player_wins == 5 || computer_wins == 5
+  if player_wins == 5 
+    puts "You won the match with 5 wins!"
+    break
+  elsif computer_wins == 5
+    puts "Computer wins the match with 5 wins!"
+    break
+  end
 
   prompt("Play again? Enter 'y' to play, or any other key to Exit")
   answer = gets.chomp.downcase
