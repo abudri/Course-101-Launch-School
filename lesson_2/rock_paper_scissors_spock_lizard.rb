@@ -1,4 +1,4 @@
-
+# require 'pry'
 VALID_CHOICES = %w(rock paper scissors spock lizard)
 VALID_INPUTS = %w(r p s sp l) # so user can type a letter or two for input
 
@@ -44,9 +44,6 @@ loop do # main execution loop. test
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')}")
     prompt("Type the FIRST letter of your choice. For Spock, type 'sp'")
-    # prompt("Choose one: Rock, Paper, Scissors")
-    # we use the .join on VALID_CHOICES to give a string separated by commas
-    # that way if we need to add more values, can just add to VALID_CHOICES
     choice = gets.chomp.downcase
 
     if VALID_INPUTS.include?(choice)
@@ -85,8 +82,10 @@ loop do # main execution loop. test
     puts 'Computer wins the match with 5 wins!'
     break
   end
+  # binding.pry
 
   prompt("Play again? Enter 'y' to play, or any other key to Exit")
   answer = gets.chomp.downcase
   break unless answer == 'y'
+  
 end
