@@ -57,6 +57,7 @@ end
 # from https://launchschool.com/lessons/de05b300/assignments/874188bb
 
 def player_places_piece!(brd)
+  current_player = 'Player'
   square = ''
   loop do
     prompt "Choose a square (#{joinor(empty_squares(brd), ',', 'or')}):"
@@ -69,6 +70,7 @@ def player_places_piece!(brd)
 end
 
 def computer_places_piece!(brd)
+  current_player = 'Computer'
   square = nil
 
   # offense first, looks for open squares, TTT Bonus Features, 5a
@@ -149,9 +151,26 @@ end
 # go through the hash, and find if any of the 'lines' sub-arrays have .count equal to 2
 # if so, computer plays in the unfilled array of that sub-array
 
+def place_piece!(board, current_player)
+  if current_player == 'Player'
+    player_places_piece!(board)
+  else
+    computer_places_piece!(board)
+  end
+end
+
+def alternate_player(current_player)
+  if current_player == 'Player'
+    'Computer'
+  else
+    'Player'
+  end 
+end
+
+
 player_wins = 0
 computer_wins = 0
-match_count = 1
+current_player = ''
 
 loop do # main loop.  Basically looping the whole game here down below,
   # and at end of this asking if player wants to play again
@@ -160,12 +179,14 @@ loop do # main loop.  Basically looping the whole game here down below,
   loop do
     display_board(board) # do this because can possibly break after
     # player goes, & before computer goes, so need to display board again
-    sleep(1.5) # gives player time to see clear board before Computer places piece
-    computer_places_piece!(board) # TTT Bonus Features, 5c, Computer goes first
-    display_board(board)
-    break if someone_won?(board) || board_full?(board) # -1:51 in video 3 or 4
-    player_places_piece!(board)
-    display_board(board)
+    place_piece!(board, current_player)
+    current_player = alternate_player(current_player)
+    # sleep(1) # gives player time to see clear board before Computer places piece
+   # computer_places_piece!(board) # TTT Bonus Features, 5c, Computer goes first
+   # display_board(board)
+    #break if someone_won?(board) || board_full?(board) # -1:51 in video 3 or 4
+    #player_places_piece!(board)
+    #display_board(board)
     break if someone_won?(board) || board_full?(board)
   end
 
@@ -206,6 +227,17 @@ end
 
 prompt "Thanks for playing Tic Tac Toe, Good Bye!"
 
+
+
+=begin
+loop do
+  display_board(board)
+  place_piece!(board, current_player)
+  current_player = alternate_player(current_player)
+  break if someone_won?(board) || board_full?(board)
+end
+
+
 # Assignment: TTT Bonus Features, 2, Keep Score
 # -------------------------
 # we want to tally the score of wins for computer, and player
@@ -219,3 +251,4 @@ prompt "Thanks for playing Tic Tac Toe, Good Bye!"
 # store that in ANSWER variable
 # if yes and player or computer wins equals 5, then reset player_wins and computer_wins to 0
 # else break from the main loop and exit program,t hanking them for playing.
+=end
