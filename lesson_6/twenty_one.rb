@@ -79,9 +79,17 @@ def busted?(current_player_hand)
   total(current_player_hand) > 21
 end 
 
+def display_score(player_cards, dealer_cards)
+  puts ""
+  prompt "GAME SUMMARY:"
+  prompt "#{player_cards} are your cards"
+  prompt "Your Total: #{total(player_cards)}"
+  prompt "#{dealer_cards} are the dealer's cards"
+  prompt "Dealer Total: #{total(dealer_cards)}"
+end
+
 def determine_winner(player_cards, dealer_cards)
-  break if busted?(player_cards)
-  break if busted?(dealer_cards)
+  return if busted?(player_cards) || busted?(dealer_cards)
   prompt "You win!" if total(player_cards) > total(dealer_cards) 
   prompt "Dealer wins!" if total(dealer_cards) > total(player_cards) 
   prompt "Its a tie!" if total(player_cards) == total(dealer_cards)
@@ -121,6 +129,8 @@ loop do
     end
   end
 
+  display_score(player_cards, dealer_cards)
+
   if busted?(player_cards)
     prompt "You breached 21, busted! Dealer wins!"
   end
@@ -129,6 +139,7 @@ loop do
     prompt "The Dealer breached 21, busted! You win!"
   end 
 
+  sleep(1)
   determine_winner(player_cards, dealer_cards)
 
   prompt "Would you like to play again?"
