@@ -1,0 +1,83 @@
+Working with 101-109 Small Problems Exercises
+Launch logo icon only gray
+Courses
+Forum
+Events
+Sharing (1)
+Resources
+Exercises
+Pages
+Chat Room
+My Account
+My Assessments
+Sign Out
+Working with 101-109 Small Problems Exercises
+The 101-109 Small Problems exercises are a set of exercises that help students who have just completed course 101 prepare for the 109 assessment. These exercises will give you lots of practice in how to solve small programming problems; not just in Ruby, but in any programming language.
+
+Difficulty Levels
+The problems are classified as Easy, Medium, and Advanced. These classifications are loosely defined, which means that some exercises may seem easier or harder than the section they're in. In order to pass the 109 assessment, you should be able to solve problems that have a difficulty level similar to those in the Medium group as a whole. For complete mastery, you should be able to handle most of the Advanced level exercises, though you won't find anything of this level on the assessment.
+
+Ideally, you should be able to solve most of the Easy exercises with only minor references to the Ruby documentation. If you have to refer to the documentation too often for these, you may have difficulty completing Medium level exercises. If you find yourself using the documentation a lot, keep practicing until you build up some "muscle memory". With the Medium and Advanced level exercises, you should feel free to reference the documentation at any time.
+
+Some exercises (especially in the Medium and Advanced groups) may introduce new topics not discussed directly in the 101 lessons. This can make even "easy" exercises seem harder than they are. This is intentional: it teaches you how to learn things for yourself. Feel free to use the documentation and your favorite search engine. If the problem is still too hard, don't worry; study the solution and discussion, and come back to the problem again later.
+
+Solving Problems
+Before you attempt to work any of these exercises, take a few hours to watch and study our Problem Solving videos. These videos will walk you through the various steps of solving problems of different kinds. Take notes, and use those notes as you work through the exercises to:
+
+* Understand the problem
+* Set up your test cases
+* Describe your inputs, outputs, and data structures
+* Describe your algorithm
+* Begin coding
+
+Use these steps for every problem, even if the problem seems too simple. Don't attempt to hack and slash your way through problems; you can get away with doing this with the very simplest problems, but the more complex a problem, the harder it is to hack and slash your way to a solution, so code with intention every time. You'll know you're doing things the right way when you find yourself spending more time getting ready to code than you actually spend coding. (That won't be true all the time, but if your preparation is thorough, the code almost writes itself.)
+
+Knowing how to solve computing problems and practicing those techniques will take you a long way.
+
+Exercise Tips
+
+* Put each exercise in a separate file, and push them to github for future reference.
+* Work each problem one at a time, starting with the easy problems.
+  - Work the problems in the order presented.
+  - Keep track of the problems that give you difficulty or that you find hard to understand.
+  - If necessary, go back to the Ruby Basics Exercises and work the appropriate exercises first.
+* Code with intention (see problem solving videos again)
+  - Use the problem solving techniques described in our problem solving videos.
+  - Don't method hunt. Method hunting is searching for the perfect pre-built method to do exactly what you need.
+    - Don't be afraid to use basic looping mechanisms like loop and while.
+    - After you have code that works, you can think about simplifying things, but that isn't the point of these exercises. (It is good practice if you'r      e up to the challenge, though.)
+
+  - If something doesn't work right:
+    - Think about why it doesn't work.
+    - Try things in irb or pry to understand why it doesn't work
+    - Don't try something else and hope it works; understand what needs to change before you change it.
+
+If at first you can't solve a problem, take a break and come back to it later.
+If you can't solve the problem after a break, take a quick look behind the Solution button.
+If there is an Approach/Algorithm section, read it and then try the problem again.
+Glance at the solution just long enough to get a feel for what it does, and then try the problem again.
+Read the Discussion section and study the solution until you feel you understand it.
+Type the presented solution in and run it. Use irb or pry or some puts statements to study how the solution works.
+Close the solution and see if you can build your own solution without referring back to our solution.
+Once you have a solution, compare it to our solution and discussion.
+Don't worry if our solution looks different from yours.
+Ask yourself, what does our solution do differently than yours?
+Why do you think we did it the way we did it?
+Does your solution miss some of the "edge cases"?
+In some cases, we show really short and concise solutions; many are "one-liners". You are not expected to come up with such concise code yourself, so don't feel intimidated or discouraged if your solution is considerably longer.
+Focus on writing code that is clear to you.
+Strive to understand our concise solutions, but don't expect to emulate them in your own code yet. The concise solutions can be hard to understand at this stage, but they introduce techniques and methods that you may find useful in the future.
+Much Ruby code is written in this concise manner, so you must learn to at least read it.
+Compare your solution with solutions posted by other students.
+See if you can use those solutions to make your code easier to understand.
+See something interesting? Read about it in the documentation.
+Post your solution if it differs significantly from other solutions.
+After working through the exercises, go back to the exercises you had difficulty with. Keep going back until you believe you understand both the problem and the solution.
+The Further Exploration sections look at problems from a different angle. Some of these Further Explorations are at the same difficulty level as the original problem, and some are considerably harder.
+Don't attempt the Further Explorations until you fully understand the main problem.
+Do attempt the Further Explorations once you fully understand the main problem. The Further Explorations are optional, but recommended to improve your skills.
+Don't worry if you can't solve the Further Explorations! These problems are more about thinking than they are about actually writing code; that is why we don't supply solutions.
+Feel free to post your Further Exploration solutions with the other exercise solutions (make sure you identify it as a Further Exploration solution).
+Feel free to open a regular Forum post about a Further Exploration to discuss it (but try to avoid posting solutions!)
+
+
