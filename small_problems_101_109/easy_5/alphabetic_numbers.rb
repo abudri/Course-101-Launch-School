@@ -17,6 +17,14 @@ def alphabetic_number_sort(arr) # arr is (0..19).to_a
   new_num_arr
 end 
 
+
+def truncate_string(string)
+  max = 76 # we have two borders with a space cushion, so 80 minus 4 is 76
+  string.size > max ? string = string[0..76] : string
+  # if string is larger than 76, set string to 0..76 characters, otherwise, return string (: string)
+end 
+
+
 =begin 
 
 Alphabetical Numbers
